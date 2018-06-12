@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "074ddc0d-040d-0410-a589-d7865ad5b903++5937",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "074ddc0d-040d-0410-a589-d7865ad5b903++5937" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "074ddc0d-040d-0410-a589-d7865ad5b903++5937" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A23BD14C-F4CB-469E-B991-5A6D7285BA27",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "074ddc0d-040d-0410-a589-d7865ad5b903++5937" : "worktimer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Worktimer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Worktimer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/haecker.me\/svn\/mhaecker",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "074ddc0d-040d-0410-a589-d7865ad5b903++5937"
+    }
+  ]
+}
