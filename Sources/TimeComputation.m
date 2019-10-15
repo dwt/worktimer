@@ -30,7 +30,7 @@ NSString *stringFromTimeInterval(NSTimeInterval duration) {
 	// REFACT: find a better way to represent the time
 	// hack that leaves all fields except hours and minutes empty
     id timeFormatter = [[[NSDateFormatter alloc] init] autorelease];
-    [timeFormatter setDateFormat: @"%H:%M"];
+    [timeFormatter setDateFormat:@"HH:mm"];
     return [timeFormatter dateFromString: [timeFormatter stringFromDate:aDate]];
 }
 
