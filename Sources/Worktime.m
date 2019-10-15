@@ -9,6 +9,7 @@
 
 // REFACT: change internal time-format to be a full date
 // This would need additional GUI!
+// REFACT consider to fix the date on both start and end time to the date
 
 - (void) awakeFromInsert {
 	[self setPrimitiveValue: [NSDate date] forKey: @"date"];
