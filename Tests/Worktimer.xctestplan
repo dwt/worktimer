@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "C37C2425-F1ED-4E21-AF74-E892E26C2DF9",
+      "name" : "Unit Tests",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Worktimer.xcodeproj",
+      "identifier" : "8D1107260486CEB800E47090",
+      "name" : "Worktimer"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Worktimer.xcodeproj",
+        "identifier" : "8D59893B2356483B0049CB88",
+        "name" : "WorktimerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

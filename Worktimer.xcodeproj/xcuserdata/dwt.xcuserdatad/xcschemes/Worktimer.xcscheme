@@ -25,16 +25,44 @@
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:Tests/Worktimer.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D56C4E80CE78DD8002887A6"
                BuildableName = "Tests.octest"
                BlueprintName = "Tests"
+               ReferencedContainer = "container:Worktimer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8D59893B2356483B0049CB88"
+               BuildableName = "WorktimerTests.xctest"
+               BlueprintName = "WorktimerTests"
+               ReferencedContainer = "container:Worktimer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8D59893B2356483B0049CB88"
+               BuildableName = "WorktimerTests.xctest"
+               BlueprintName = "WorktimerTests"
                ReferencedContainer = "container:Worktimer.xcodeproj">
             </BuildableReference>
          </TestableReference>

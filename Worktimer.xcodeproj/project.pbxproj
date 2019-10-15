@@ -13,10 +13,9 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		8D1879571429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1879561429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld */; };
-		8D56C4F40CE78EAE002887A6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C4F30CE78EAE002887A6 /* Tests.m */; };
-		8D56C51A0CE7A300002887A6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D56C5190CE7A300002887A6 /* SenTestingKit.framework */; };
+		8D598946235648780049CB88 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C4F30CE78EAE002887A6 /* Tests.m */; };
+		8D5989472356487C0049CB88 /* TimeComputationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779F1188930500C537AA /* TimeComputationTest.m */; };
 		8DAD779D118892E400C537AA /* TimeComputation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779C118892E400C537AA /* TimeComputation.m */; };
-		8DAD77A01188930500C537AA /* TimeComputationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779F1188930500C537AA /* TimeComputationTest.m */; };
 		8DDC4EE8099FA2C500D03CCB /* Worktime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC4EE7099FA2C500D03CCB /* Worktime.m */; };
 		8DDC4FE7099FD5A600D03CCB /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC4FE5099FD5A600D03CCB /* minus.png */; };
 		8DDC4FE8099FD5A600D03CCB /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC4FE6099FD5A600D03CCB /* plus.png */; };
@@ -24,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8D56C4EE0CE78DDD002887A6 /* PBXContainerItemProxy */ = {
+		8D5989412356483B0049CB88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
@@ -46,16 +45,13 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Worktimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worktimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1879581429B84B0056ED31 /* Worktimer_DataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Worktimer_DataModel 2.xcdatamodel"; sourceTree = "<group>"; };
-		8D56C4E90CE78DD8002887A6 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D56C4EA0CE78DD8002887A6 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		8D56C4F20CE78EAE002887A6 /* Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests.h; sourceTree = "<group>"; };
 		8D56C4F30CE78EAE002887A6 /* Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		8D56C5190CE7A300002887A6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8D59893C2356483B0049CB88 /* WorktimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorktimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5989402356483B0049CB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8999172354676700E67B31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D8999192354677100E67B31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		8DAD779B118892E400C537AA /* TimeComputation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeComputation.h; sourceTree = "<group>"; };
 		8DAD779C118892E400C537AA /* TimeComputation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeComputation.m; sourceTree = "<group>"; };
-		8DAD779E1188930500C537AA /* TimeComputationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeComputationTest.h; sourceTree = "<group>"; };
 		8DAD779F1188930500C537AA /* TimeComputationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeComputationTest.m; sourceTree = "<group>"; };
 		8DDC4EE6099FA2C500D03CCB /* Worktime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktime.h; sourceTree = "<group>"; };
 		8DDC4EE7099FA2C500D03CCB /* Worktime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worktime.m; sourceTree = "<group>"; };
@@ -73,11 +69,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D56C4E60CE78DD8002887A6 /* Frameworks */ = {
+		8D5989392356483B0049CB88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D56C51A0CE7A300002887A6 /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +92,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D56C5190CE7A300002887A6 /* SenTestingKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -117,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Worktimer.app */,
-				8D56C4E90CE78DD8002887A6 /* Tests.octest */,
+				8D59893C2356483B0049CB88 /* WorktimerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,8 +123,8 @@
 				7756732906782D8800D1FEB8 /* Model */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				8D56C4D30CE78C99002887A6 /* Tests */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				8D59893D2356483B0049CB88 /* WorktimerTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -181,16 +175,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		8D56C4D30CE78C99002887A6 /* Tests */ = {
+		8D59893D2356483B0049CB88 /* WorktimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				8D56C4EA0CE78DD8002887A6 /* Tests-Info.plist */,
-				8D56C4F20CE78EAE002887A6 /* Tests.h */,
 				8D56C4F30CE78EAE002887A6 /* Tests.m */,
-				8DAD779E1188930500C537AA /* TimeComputationTest.h */,
 				8DAD779F1188930500C537AA /* TimeComputationTest.m */,
+				8D5989402356483B0049CB88 /* Info.plist */,
 			);
-			path = Tests;
+			path = WorktimerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,24 +206,23 @@
 			productReference = 8D1107320486CEB800E47090 /* Worktimer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D56C4E80CE78DD8002887A6 /* Tests */ = {
+		8D59893B2356483B0049CB88 /* WorktimerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D56C4EB0CE78DD8002887A6 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = 8D5989432356483B0049CB88 /* Build configuration list for PBXNativeTarget "WorktimerTests" */;
 			buildPhases = (
-				8D56C4E40CE78DD8002887A6 /* Resources */,
-				8D56C4E50CE78DD8002887A6 /* Sources */,
-				8D56C4E60CE78DD8002887A6 /* Frameworks */,
-				8D56C4E70CE78DD8002887A6 /* ShellScript */,
+				8D5989382356483B0049CB88 /* Sources */,
+				8D5989392356483B0049CB88 /* Frameworks */,
+				8D59893A2356483B0049CB88 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8D56C4EF0CE78DDD002887A6 /* PBXTargetDependency */,
+				8D5989422356483B0049CB88 /* PBXTargetDependency */,
 			);
-			name = Tests;
-			productName = Tests;
-			productReference = 8D56C4E90CE78DD8002887A6 /* Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			name = WorktimerTests;
+			productName = WorktimerTests;
+			productReference = 8D59893C2356483B0049CB88 /* WorktimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -240,6 +231,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1110;
+				TargetAttributes = {
+					8D59893B2356483B0049CB88 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 8D1107260486CEB800E47090;
+					};
+				};
 			};
 			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "Worktimer" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -254,7 +251,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Worktimer */,
-				8D56C4E80CE78DD8002887A6 /* Tests */,
+				8D59893B2356483B0049CB88 /* WorktimerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D56C4E40CE78DD8002887A6 /* Resources */ = {
+		8D59893A2356483B0049CB88 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,22 +277,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8D56C4E70CE78DD8002887A6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -310,22 +291,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D56C4E50CE78DD8002887A6 /* Sources */ = {
+		8D5989382356483B0049CB88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D56C4F40CE78EAE002887A6 /* Tests.m in Sources */,
-				8DAD77A01188930500C537AA /* TimeComputationTest.m in Sources */,
+				8D5989472356487C0049CB88 /* TimeComputationTest.m in Sources */,
+				8D598946235648780049CB88 /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8D56C4EF0CE78DDD002887A6 /* PBXTargetDependency */ = {
+		8D5989422356483B0049CB88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D1107260486CEB800E47090 /* Worktimer */;
-			targetProxy = 8D56C4EE0CE78DDD002887A6 /* PBXContainerItemProxy */;
+			targetProxy = 8D5989412356483B0049CB88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -461,67 +442,86 @@
 			};
 			name = Release;
 		};
-		8D56C4EC0CE78DD8002887A6 /* Debug */ = {
+		8D5989442356483B0049CB88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Worktimer.app/Contents/MacOS/Worktimer";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
-				);
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Cocoa,
-					"-framework",
-					SenTestingKit,
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Tests;
-				PRODUCT_NAME = Tests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = WorktimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.haecker.WorktimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Worktimer.app/Contents/MacOS/Worktimer";
 			};
 			name = Debug;
 		};
-		8D56C4ED0CE78DD8002887A6 /* Release */ = {
+		8D5989452356483B0049CB88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Worktimer.app/Contents/MacOS/Worktimer";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = WorktimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Cocoa,
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Tests;
-				PRODUCT_NAME = Tests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.haecker.WorktimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Worktimer.app/Contents/MacOS/Worktimer";
 			};
 			name = Release;
 		};
@@ -546,11 +546,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D56C4EB0CE78DD8002887A6 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		8D5989432356483B0049CB88 /* Build configuration list for PBXNativeTarget "WorktimerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8D56C4EC0CE78DD8002887A6 /* Debug */,
-				8D56C4ED0CE78DD8002887A6 /* Release */,
+				8D5989442356483B0049CB88 /* Debug */,
+				8D5989452356483B0049CB88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
