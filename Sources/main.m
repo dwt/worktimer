@@ -8,20 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-BOOL isRunningUnitTests() {
-	return nil != NSClassFromString(@"SenTestCase");
-}
-
-int runApplicationWithoutLoadingGUI() {
-	[NSApplication sharedApplication];
-	[NSApp run];
-	return 0;
-}
 
 int main(int argc, char *argv[])
 {
-	if (isRunningUnitTests())
-		return runApplicationWithoutLoadingGUI();
-	
     return NSApplicationMain(argc,  (const char **) argv);
 }
