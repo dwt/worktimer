@@ -288,8 +288,14 @@ id week(id date) {
 	if ([[NSApplication sharedApplication] presentError:error])
 		return NSTerminateNow; // error handling succeeded
 	
-	NSInteger alertReturn = NSRunCriticalAlertPanel(@"Unable to save", @"Unabel to save changes while quitting. Continue to run?" , @"Continue to run!", @"Quit", nil);
-	if (NSAlertFirstButtonReturn == alertReturn)
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    alert.alertStyle = NSAlertStyleCritical;
+    alert.messageText = @"Unable to save";
+    alert.informativeText = @"Unabel to save changes while quitting. Continue to run?";
+    [alert addButtonWithTitle:@"Continue to run!"];
+    [alert addButtonWithTitle:@"Quit"];
+    
+	if (NSAlertFirstButtonReturn == [alert runModal])
 		return NSTerminateCancel; // continue to run
 	else
 		return NSTerminateNow; // quit
