@@ -38,7 +38,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Worktimer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktimer_Prefix.pch; sourceTree = "<group>"; };
-		770B37EC0679A11B001EADE2 /* Worktimer_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Worktimer_DataModel.xcdatamodel; sourceTree = "<group>"; };
+		770B37EC0679A11B001EADE2 /* 01-initial_model.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = "01-initial_model.xcdatamodel"; sourceTree = "<group>"; };
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* Worktimer_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktimer_AppDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* Worktimer_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worktimer_AppDelegate.m; sourceTree = "<group>"; };
@@ -561,10 +561,10 @@
 		8D1879561429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				770B37EC0679A11B001EADE2 /* Worktimer_DataModel.xcdatamodel */,
 				8D1879581429B84B0056ED31 /* Worktimer_DataModel 2.xcdatamodel */,
+				770B37EC0679A11B001EADE2 /* 01-initial_model.xcdatamodel */,
 			);
-			currentVersion = 770B37EC0679A11B001EADE2 /* Worktimer_DataModel.xcdatamodel */;
+			currentVersion = 770B37EC0679A11B001EADE2 /* 01-initial_model.xcdatamodel */;
 			path = Worktimer_DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
