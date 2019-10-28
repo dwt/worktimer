@@ -26,6 +26,10 @@
 
 // Formulate migration strategy and what can be done as lightweight migrations
 
+// This model should have two values, start / end.
+// Every other value should be derived from these.
+// Add automatism that sets the date part of the end time to the date of the start time
+
 - (void) awakeFromInsert {
 	[self setPrimitiveValue: [NSDate date] forKey: @"date"];
     [self setPrimitiveValue: [[TimeComputation sharedInstance] currentTime] forKey: @"startTime"];
@@ -35,6 +39,8 @@
 	return [NSSet setWithObjects:@"startTime", @"endTime", nil];
 }
 
+// REFACT need to transform this to NSDuration or something similar, so key value bindings can sum them
+// then transform that to a string with a value transformer on the NSTextField that displays it
 - (NSString *)hoursAndMinutesFromDuration; {
 	NSTimeInterval duration = 0;
 	if ([self valueForKey:@"endTime"])
@@ -45,8 +51,6 @@
 	return [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:duration];
 }
 
-// REFACT need to transform this to NSDuration or something similar, so key value bindings can sum them
-// then transform that to a string with a value transformer on the NSTextField that displays it
 // REFACT: figure out how to get rid of this legacy symbol.
 - (NSString *)durationAsHoursAndMinutes { return [self hoursAndMinutesFromDuration]; }
 
