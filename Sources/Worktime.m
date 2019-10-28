@@ -9,7 +9,22 @@
 
 // REFACT: change internal time-format to be a full date
 // This would need additional GUI!
-// REFACT consider to fix the date on both start and end time to the date
+// REFACT consider to fix the date on both start and end time to the date that is displayed on the left
+// that should make the time computation much easier (and it should also be a computed value, that is expressed as a NSTimeInterval oder NSDateInterval
+// then format with NSDateIntervalFormatter mit .timeStyle = NSDateIntervalFormatterShortStyle
+// this should have a project / tag, that is auto-selected to the lasts entry tag
+// consider to have an easy text entry box, that allows you to enter lines like this: '@sntl', and then starts a line for sntl right now
+// I want a weekly commitment, that the app shows when it is reached
+// it should also compute and show the overtime
+// it could help by adding pomodoros, so it is easier to plan how many pomodoros you invest in a task and then run the timers
+// needs to be able to tell the app that a day is 'free' because of feiertag or holiday
+// app should track number of holidays and display that
+// could show work-time / remaining daily time in the touch bar
+// would be really cool, if I could edit the duration, to change the end-time
+// for each project, store till when it is billed / and display not billed hours?
+// store project hourly rate and display income?
+
+// Formulate migration strategy and what can be done as lightweight migrations
 
 - (void) awakeFromInsert {
 	[self setPrimitiveValue: [NSDate date] forKey: @"date"];

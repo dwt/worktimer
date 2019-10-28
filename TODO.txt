@@ -69,3 +69,4 @@
 ** Get goals from that: more than xx overtime till yy so I can take the leave zz
 * Get it to integrate nicely with a GTD application so it is dead easy to plan projects in advance. It should support goal setting, priorisation, task breakdown, execution and review
 * Extra super bonus points if it is network aware and can form ad hoc networks with other instanc eof the app securely if you want
+* Worktimer als open source veröffentlichen
