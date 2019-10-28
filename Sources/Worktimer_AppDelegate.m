@@ -292,7 +292,7 @@ id week(id date) {
     alert.alertStyle = NSAlertStyleCritical;
     alert.messageText = @"Unable to save";
     alert.informativeText = @"Unabel to save changes while quitting. Continue to run?";
-    [alert addButtonWithTitle:@"Continue to run!"];
+    [alert addButtonWithTitle:@"Continue to run"];
     [alert addButtonWithTitle:@"Quit"];
     
 	if (NSAlertFirstButtonReturn == [alert runModal])
