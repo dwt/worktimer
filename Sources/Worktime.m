@@ -63,4 +63,22 @@
     [(Worktimer_AppDelegate *)[NSApp delegate] refreshSorting];
 }
 
+/*
+ Example code to get date-components from the difference of two dates
+ this should be helpfull to display the time via NSDateComponentsFormatter <https://developer.apple.com/documentation/foundation/nsdatecomponentsformatter?language=objc#>
+ 
+// Get the system calendar
+NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+
+// Create the NSDates
+NSDate *date1 = [[NSDate alloc] init];
+NSDate *date2 = [[NSDate alloc] initWithTimeInterval:theTimeInterval sinceDate:date1];
+
+// Get conversion to months, days, hours, minutes
+NSCalendarUnit unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+
+NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:date1  toDate:date2  options:0];
+NSLog(@"Break down: %i min : %i hours : %i days : %i months", [breakdownInfo minute], [breakdownInfo hour], [breakdownInfo day], [breakdownInfo month]);
+*/
+
 @end
