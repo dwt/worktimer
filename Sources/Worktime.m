@@ -29,6 +29,27 @@
 // This model should have two values, start / end.
 // Every other value should be derived from these.
 // Add automatism that sets the date part of the end time to the date of the start time
+/*
+ Likely steps to achieve this
+ - Follow https://medium.com/@shakya4577/heavyweight-core-data-migration-51570555124b
+ - example code: https://github.com/shakya4577/HeavyweightMigration
+ - Create second model version that has only the new values start / end (maybe startDate/ endDate)
+ - Create MappingModel
+ - Map startDate from date+startTime
+ - Map endDate from date+endTime
+ - Provide methods that still return the old named values
+ - with change notifications so the ui can auto update
+ - provide method that retuns the date components
+ - display the date components with a NSDateComponentsFormatter in the UI
+ - update ui to display start / end directly with NSDateFormatter
+ */
+
+/*
+ - later: consider how to update the endDate from changes to those date components
+ - add new field company / tag / job that signifies the company / the job is done for
+    - consider a compound field that combines job@company sntl@work, sntl@sprint or the other way around?
+    - this could emulate sntl@sick, sntl@holiday to add special time entries that cover for special time
+ */
 
 - (void) awakeFromInsert {
 	[self setPrimitiveValue: [NSDate date] forKey: @"date"];
