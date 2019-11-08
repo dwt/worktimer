@@ -175,8 +175,8 @@ id week(id date) {
 //        }
 //
 //        NSPersistentStoreDescription *description = [[[NSPersistentStoreDescription alloc] init] autorelease];
-////        description.shouldMigrateStoreAutomatically = true;
-////        description.shouldInferMappingModelAutomatically = true;
+//        description.shouldMigrateStoreAutomatically = true;
+//        description.shouldInferMappingModelAutomatically = true;
 //        [persistentContainer setPersistentStoreDescriptions:@[description]];
 //    }];
 //    return persistentContainer;

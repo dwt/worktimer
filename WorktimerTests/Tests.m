@@ -25,43 +25,42 @@
 
 - createWorktime { return [NSEntityDescription insertNewObjectForEntityForName:@"Worktime" inManagedObjectContext:context]; }
 
-- (void) testCreateAndWorkWithAWorktime
-{
+- (void) testWorktimeKnowsItsWorktimeIfEndTimeSpecified {
 	id worktime = [self createWorktime];
-	id endTime = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:60*4]];
-	
-	[worktime setValue: endTime forKey: @"endTime"];
-	
-	XCTAssertEqualObjects(@"0:04", [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:[[worktime valueForKey:@"endTime"] timeIntervalSinceDate:[worktime valueForKey:@"startTime"]]]);
-}
-
-- (void) testWorktimeKnowsItsWorktimeIfEndTimeSpecified
-{
-	id worktime = [self createWorktime];
-	id endTime = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:60*4]];
-	[worktime setValue: endTime forKey: @"endTime"];
-	
+	id endDate = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:60*5]];
+	[worktime setValue: endDate forKey: @"endDate"];
 	XCTAssertEqualObjects(@"0:04", [worktime hoursAndMinutesFromDuration]);
 }
 
-- (void) testWorktimeAssumesWorktimeTillNowIfEndTimeNotSpecified
-{
+- (void) testWorktimeAssumesWorktimeTillNowIfEndTimeNotSpecified {
 	id worktime = [self createWorktime];
-	id startTime = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:-60*4]];
-	[worktime setValue:startTime forKey:@"startTime"];
+	id startDate = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:-60*4]];
+	[worktime setValue:startDate forKey:@"startDate"];
 	XCTAssertEqualObjects(@"0:04", [worktime hoursAndMinutesFromDuration]);
 }
 
-- (void) donttestComputingTheTotalWorktimeOfOneDay
-{
-	
+- (void) testForcesEndDateToSameDayAsStartDate {
+    id worktime = [self createWorktime];
+    id startDate = [worktime valueForKey:@"startDate"];
+    id endDate = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:60*60*24*3]];
+    [worktime setValue:endDate forKey:@"endDate"];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    XCTAssertNotEqual(
+        [calendar component:NSCalendarUnitDay fromDate:startDate],
+        [calendar component:NSCalendarUnitDay fromDate:endDate]
+    );
+
+    XCTAssertEqual(
+        [calendar component:NSCalendarUnitDay fromDate:startDate],
+        [calendar component:NSCalendarUnitDay fromDate:[worktime valueForKey:@"endDate"]]
+    );
 }
 
-- (void) donttestContinuallyUpdateWorktimeAsLongAsEndDateIsNotSet
-{
+- (void) donttestContinuallyUpdateWorktimeAsLongAsEndDateIsNotSet {
+    // too slow, would need to wait one minute or find a way to fake the system time
 	id worktime = [self createWorktime];
 	id startTime = [timeComputation timeFromDate:[NSDate dateWithTimeIntervalSinceNow:-37]];
-	[worktime setValue:startTime forKey:@"startTime"];
+	[worktime setValue:startTime forKey:@"startDate"];
 	XCTAssertEqualObjects(@"0:00", [worktime hoursAndMinutesFromDuration], @"before sleep");
 	sleep(1);
 	XCTAssertEqualObjects(@"0:01", [worktime hoursAndMinutesFromDuration], @"after sleep");
