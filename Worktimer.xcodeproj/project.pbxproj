@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		77C8280E06725ACE000B614F /* Worktimer_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* Worktimer_AppDelegate.m */; };
+		8D0E544F2374BAB1002A3B72 /* 001-WorktimeParameterReduction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E544E2374BAB1002A3B72 /* 001-WorktimeParameterReduction.m */; };
+		8D0E54512374C467002A3B72 /* 001-WorktimeParameterReduction.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E54502374C467002A3B72 /* 001-WorktimeParameterReduction.xcmappingmodel */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -42,6 +44,9 @@
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* Worktimer_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktimer_AppDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* Worktimer_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worktimer_AppDelegate.m; sourceTree = "<group>"; };
+		8D0E544D2374BAB1002A3B72 /* 001-WorktimeParameterReduction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "001-WorktimeParameterReduction.h"; sourceTree = "<group>"; };
+		8D0E544E2374BAB1002A3B72 /* 001-WorktimeParameterReduction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "001-WorktimeParameterReduction.m"; sourceTree = "<group>"; };
+		8D0E54502374C467002A3B72 /* 001-WorktimeParameterReduction.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "001-WorktimeParameterReduction.xcmappingmodel"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Worktimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worktimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1879581429B84B0056ED31 /* 02-reduce_to_start_end.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "02-reduce_to_start_end.xcdatamodel"; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 		7756732906782D8800D1FEB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D0E544C2374BA69002A3B72 /* Migrations */,
 				8DDC4EE6099FA2C500D03CCB /* Worktime.h */,
 				8DDC4EE7099FA2C500D03CCB /* Worktime.m */,
 				8D1879561429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld */,
@@ -173,6 +179,16 @@
 			);
 			name = Model;
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		8D0E544C2374BA69002A3B72 /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				8D0E544D2374BAB1002A3B72 /* 001-WorktimeParameterReduction.h */,
+				8D0E544E2374BAB1002A3B72 /* 001-WorktimeParameterReduction.m */,
+				8D0E54502374C467002A3B72 /* 001-WorktimeParameterReduction.xcmappingmodel */,
+			);
+			path = Migrations;
 			sourceTree = "<group>";
 		};
 		8D59893D2356483B0049CB88 /* WorktimerTests */ = {
@@ -283,7 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0E544F2374BAB1002A3B72 /* 001-WorktimeParameterReduction.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				8D0E54512374C467002A3B72 /* 001-WorktimeParameterReduction.xcmappingmodel in Sources */,
 				77C8280E06725ACE000B614F /* Worktimer_AppDelegate.m in Sources */,
 				8D1879571429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld in Sources */,
 				8DDC4EE8099FA2C500D03CCB /* Worktime.m in Sources */,
@@ -564,7 +582,7 @@
 				770B37EC0679A11B001EADE2 /* 01-initial_model.xcdatamodel */,
 				8D1879581429B84B0056ED31 /* 02-reduce_to_start_end.xcdatamodel */,
 			);
-			currentVersion = 770B37EC0679A11B001EADE2 /* 01-initial_model.xcdatamodel */;
+			currentVersion = 8D1879581429B84B0056ED31 /* 02-reduce_to_start_end.xcdatamodel */;
 			path = Worktimer_DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

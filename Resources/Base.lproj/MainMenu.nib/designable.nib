@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1050" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -51,7 +51,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="238" name="value" keyPath="arrangedObjects.date" id="272"/>
+                                                <binding destination="238" name="value" keyPath="arrangedObjects.startDate" id="ab5-uN-H5c"/>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn width="81" minWidth="40" maxWidth="1000" id="229">
@@ -68,7 +68,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="238" name="value" keyPath="arrangedObjects.startTime" id="242"/>
+                                                <binding destination="238" name="value" keyPath="arrangedObjects.startDate" id="Kro-FT-d3H"/>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn width="117.7119140625" minWidth="27.7119140625" maxWidth="1000" id="230">
@@ -85,7 +85,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="238" name="value" keyPath="arrangedObjects.endTime" id="243"/>
+                                                <binding destination="238" name="value" keyPath="arrangedObjects.endDate" id="77N-vP-0UB"/>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn width="107.51904296875" minWidth="50.51904296875" maxWidth="1000" id="237">
@@ -101,7 +101,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="238" name="value" keyPath="arrangedObjects.durationAsHoursAndMinutes" id="340"/>
+                                                <binding destination="238" name="value" keyPath="arrangedObjects.hoursAndMinutesFromDuration" id="ePK-X3-5dw"/>
                                             </connections>
                                         </tableColumn>
                                     </tableColumns>
@@ -144,7 +144,7 @@
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         </datePickerCell>
                         <connections>
-                            <binding destination="238" name="value" keyPath="selection.date" id="267"/>
+                            <binding destination="238" name="value" keyPath="selection.startDate" id="YT2-bC-eTO"/>
                         </connections>
                     </datePicker>
                     <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="257">
@@ -168,7 +168,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="238" name="value" keyPath="selection.startTime" id="268"/>
+                            <binding destination="238" name="value" keyPath="selection.startDate" id="0sO-aP-S65"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="264">
@@ -181,7 +181,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="238" name="value" keyPath="selection.endTime" id="269"/>
+                            <binding destination="238" name="value" keyPath="selection.endDate" id="kfR-oA-VMf"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="334">
@@ -193,7 +193,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="238" name="value" keyPath="selection.durationAsHoursAndMinutes" id="342"/>
+                            <binding destination="238" name="value" keyPath="selection.hoursAndMinutesFromDuration" id="7aF-mO-cCy"/>
                         </connections>
                     </textField>
                 </subviews>
@@ -500,7 +500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" ambiguous="YES" id="xgU-sx-eru">
                             <rect key="frame" x="1" y="0.0" width="358" height="261"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="386" id="295">
                                     <rect key="frame" x="0.0" y="0.0" width="358" height="236"/>

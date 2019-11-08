@@ -5,7 +5,9 @@
 #import "TimeComputation.h"
 #import "Worktimer_AppDelegate.h"
 
-@implementation Worktime 
+@implementation Worktime
+
+// FIXME need to ensure that the endDate is always on the same day as the startDate
 
 // REFACT: change internal time-format to be a full date
 // This would need additional GUI!
@@ -52,54 +54,57 @@
  */
 
 - (void) awakeFromInsert {
-	[self setPrimitiveValue: [NSDate date] forKey: @"date"];
-    [self setPrimitiveValue: [[TimeComputation sharedInstance] currentTime] forKey: @"startTime"];
+	[self setPrimitiveValue: [NSDate date] forKey: @"startDate"];
 }
 
-+ (NSSet *)keyPathsForValuesAffectingdurationAsHoursAndMinutes {
-	return [NSSet setWithObjects:@"startTime", @"endTime", nil];
++ (NSSet *) keyPathsForValuesAffectingdurationAsHoursAndMinutes {
+	return [NSSet setWithObjects:@"startDate", @"endDate", nil];
+}
+
+- (NSTimeInterval) duration {
+    NSDate *startDate = [self valueForKey:@"startDate"];
+    NSDate *endDate = [self valueForKey:@"endDate"];
+    
+    if ( ! endDate) {
+        endDate = [self forceDate:[NSDate date] toSameDayAsDate:startDate];
+    }
+
+    return [endDate timeIntervalSinceDate:startDate];
 }
 
 // REFACT need to transform this to NSDuration or something similar, so key value bindings can sum them
 // then transform that to a string with a value transformer on the NSTextField that displays it
-- (NSString *)hoursAndMinutesFromDuration; {
-	NSTimeInterval duration = 0;
-	if ([self valueForKey:@"endTime"])
-		duration = [[self valueForKey:@"endTime"] timeIntervalSinceDate: [self valueForKey:@"startTime"]];
-	else
-		duration = [[[TimeComputation sharedInstance] currentTime] timeIntervalSinceDate: [self valueForKey:@"startTime"]];
-	
-	return [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:duration];
+- (NSString *) hoursAndMinutesFromDuration {
+	return [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:[self duration]];
 }
 
-// REFACT: figure out how to get rid of this legacy symbol.
-- (NSString *)durationAsHoursAndMinutes { return [self hoursAndMinutesFromDuration]; }
-
-
-- (void)setDate:(NSDate *)value 
-{
-    [self willChangeValueForKey: @"date"];
-    [self setPrimitiveValue: value forKey: @"date"];
-    [self didChangeValueForKey: @"date"];
+// REFACT should be setStartDate
+- (void)setStartDate:(NSDate *)newDate {
+    [self willChangeValueForKey: @"startDate"];
+    [self setPrimitiveValue: newDate forKey: @"startDate"];
+    [self didChangeValueForKey: @"startDate"];
     [(Worktimer_AppDelegate *)[NSApp delegate] refreshSorting];
 }
 
-/*
- Example code to get date-components from the difference of two dates
- this should be helpfull to display the time via NSDateComponentsFormatter <https://developer.apple.com/documentation/foundation/nsdatecomponentsformatter?language=objc#>
- 
-// Get the system calendar
-NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+- (void)setEndDate:(NSDate *)newDate {
+    NSDate *startDate = [self primitiveValueForKey:@"startDate"];
+    newDate = [self forceDate:newDate toSameDayAsDate:startDate];
+    
+    [self willChangeValueForKey: @"endDate"];
+    [self setPrimitiveValue: newDate forKey: @"endDate"];
+    [self didChangeValueForKey: @"endDate"];
+}
 
-// Create the NSDates
-NSDate *date1 = [[NSDate alloc] init];
-NSDate *date2 = [[NSDate alloc] initWithTimeInterval:theTimeInterval sinceDate:date1];
-
-// Get conversion to months, days, hours, minutes
-NSCalendarUnit unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
-
-NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:date1  toDate:date2  options:0];
-NSLog(@"Break down: %i min : %i hours : %i days : %i months", [breakdownInfo minute], [breakdownInfo hour], [breakdownInfo day], [breakdownInfo month]);
-*/
+- (NSDate *)forceDate:(NSDate *)aDate toSameDayAsDate:(NSDate *)referenceDate {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *referenceDateComponents = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:referenceDate];
+    NSDateComponents *endDateComponents = [calendar components:NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:aDate];
+    
+    endDateComponents.year = referenceDateComponents.year;
+    endDateComponents.month = referenceDateComponents.month;
+    endDateComponents.day = referenceDateComponents.day;
+    
+    return [calendar dateFromComponents:endDateComponents];
+}
 
 @end

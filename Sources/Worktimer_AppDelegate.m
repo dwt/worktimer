@@ -15,7 +15,7 @@
 
 - (void) refreshSorting;
 {
-    id sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    id sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO];
     id sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
 	[worktimeController setSortDescriptors:sortDescriptors];
 }
@@ -161,7 +161,26 @@ id week(id date) {
     return [basePath stringByAppendingPathComponent:@"Worktimer"];
 }
 
-
+// using the persistentContainer would be the more modern way to setup a CoreData stack today
+// it should require less code all in all, maybe watch a core data session from the wwdc to get up to speed?
+//- (NSPersistentContainer *)persistentContainer {
+//    if (persistentContainer != nil) {
+//        return persistentContainer;
+//    }
+//
+//    persistentContainer = [NSPersistentContainer persistentContainerWithName:@"Worktimer_Datamodel" managedObjectModel:[self managedObjectModel]];
+//    [persistentContainer loadPersistentStoresWithCompletionHandler: ^(id store, id error){
+//        if (error) {
+//            [[NSApplication sharedApplication] presentError:error];
+//        }
+//
+//        NSPersistentStoreDescription *description = [[[NSPersistentStoreDescription alloc] init] autorelease];
+////        description.shouldMigrateStoreAutomatically = true;
+////        description.shouldInferMappingModelAutomatically = true;
+//        [persistentContainer setPersistentStoreDescriptions:@[description]];
+//    }];
+//    return persistentContainer;
+//}
 /**
  Creates, retains, and returns the managed object model for the application 
  by merging all of the models found in the application bundle and all of the 
@@ -193,7 +212,6 @@ id week(id date) {
  */
 
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
-	
     if (persistentStoreCoordinator != nil) {
         return persistentStoreCoordinator;
     }
@@ -207,8 +225,18 @@ id week(id date) {
     
     NSURL *url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Worktimer.xml"]];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error])
-        [[NSApplication sharedApplication] presentError:error];
+    NSPersistentStoreDescription *description = [NSPersistentStoreDescription persistentStoreDescriptionWithURL:url];
+    description.shouldMigrateStoreAutomatically = true;
+    description.shouldInferMappingModelAutomatically = true;
+    description.type = NSXMLStoreType;
+    [persistentStoreCoordinator addPersistentStoreWithDescription:description completionHandler: ^(id description, id error) {
+        if (error) {
+            [[NSApplication sharedApplication] presentError:error];
+        }
+    }];
+
+//    if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error])
+//        [[NSApplication sharedApplication] presentError:error];
 	
     return persistentStoreCoordinator;
 }
@@ -238,7 +266,7 @@ id week(id date) {
  Returns the NSUndoManager for the application.  In this case, the manager
  returned is that of the managed object context for the application.
  */ 
-- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
+- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window { 
     return [[self managedObjectContext] undoManager];
 }
 
@@ -290,10 +318,10 @@ id week(id date) {
 	
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.alertStyle = NSAlertStyleCritical;
-    alert.messageText = @"Unable to save";
-    alert.informativeText = @"Unabel to save changes while quitting. Continue to run?";
-    [alert addButtonWithTitle:@"Continue to run"];
-    [alert addButtonWithTitle:@"Quit"];
+    alert.messageText = NSLocalizedString(@"Unable to save", nil);
+    alert.informativeText = NSLocalizedString(@"Unabel to save changes while quitting. Continue to run?", nil);
+    [alert addButtonWithTitle:NSLocalizedString(@"Continue to run", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
     
 	if (NSAlertFirstButtonReturn == [alert runModal])
 		return NSTerminateCancel; // continue to run
