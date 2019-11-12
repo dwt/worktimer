@@ -57,31 +57,34 @@ BOOL isViewSuperviewOf( id view, id viewToTest)
         [worktime setValue: currentTime forKey: @"startTime"];
     }
     else if (isViewSuperviewOf(endTimeField, [window firstResponder])) {
-        [worktime setValue: currentTime forKey: @"endTime"];
+        [worktime setValue: currentTime forKey: @"endDate"];
     }
 }
 
-- (IBAction) addWorktimeAndSetFocus:sender;
-{
+- (IBAction) addWorktimeAndSetFocus:sender {
     [worktimeController insert: sender];
     [self refreshSorting];
     [startTimeField selectText: sender];
 }
 
 BOOL isSameWeek(id firstDate, id secondDate) {
-    id gregorianCalendar = [NSCalendar currentCalendar];
-    unsigned calendarFlags = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
+    if ( ! firstDate || ! secondDate)
+        NSLog(@"problem");
+    
+    // REFACT extract yearAndWeekFromDate
+    id calendar = [NSCalendar currentCalendar];
+    NSInteger yearAndWeek = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
 	
-    id firstComponents = [gregorianCalendar components:calendarFlags fromDate:firstDate];
-    id secondComponents = [gregorianCalendar components:calendarFlags fromDate:secondDate];
+    id firstComponents = [calendar components:yearAndWeek fromDate:firstDate];
+    id secondComponents = [calendar components:yearAndWeek fromDate:secondDate];
     return [firstComponents year] == [secondComponents year]
-	&& [firstComponents weekOfMonth] == [secondComponents weekOfMonth];
+        && [firstComponents weekOfMonth] == [secondComponents weekOfMonth];
 }
 
 void printReport(id self, id date, NSTimeInterval worktime) {
-    id gregorianCalendar = [NSCalendar currentCalendar];
-    unsigned calendarFlags = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
-    id dateComponents = [gregorianCalendar components:calendarFlags fromDate:date];
+    id calendar = [NSCalendar currentCalendar];
+    NSInteger yearAndWeek = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
+    id dateComponents = [calendar components:yearAndWeek fromDate:date];
     
     NSLog(@"year: %ld week: %ld worktime: %@", 
           [dateComponents year], 
@@ -89,24 +92,26 @@ void printReport(id self, id date, NSTimeInterval worktime) {
           [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktime]);
 }
 
+// REFACT rename yearMonthAndWeekFromDate
 NSDateComponents *dateComponentsFromDate(NSDate *date) {
-	id gregorianCalendar = [NSCalendar currentCalendar];
-    unsigned calendarFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth;
-    return [gregorianCalendar components:calendarFlags fromDate:date];
+	id calendar = [NSCalendar currentCalendar];
+    NSInteger yearMonthAndWeek = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth;
+    return [calendar components:yearMonthAndWeek fromDate:date];
 }	
 
 id year(id date) {
-    return [NSNumber numberWithInteger:[dateComponentsFromDate(date) year]];
+    return @( [dateComponentsFromDate(date) year] );
 }
 
 id month(id date) {
-	return [NSNumber numberWithInteger:[dateComponentsFromDate(date) month]];
+	return @( [dateComponentsFromDate(date) month] );
 }
 
 id week(id date) {
-    return [NSNumber numberWithInteger:[dateComponentsFromDate(date) weekOfMonth]];
+    return @( [dateComponentsFromDate(date) weekOfMonth] );
 }
 
+// REFACT get this tested and extract it from the app delegate
 - weeklyReport {
     id results = [NSMutableArray array];
     id each, enumerator = [[worktimeController arrangedObjects] reverseObjectEnumerator];
@@ -114,23 +119,23 @@ id week(id date) {
 	int lastMonth = 0;
 	NSTimeInterval worktimeInOneMonth = 0;
     while (nil != each) {
-        id date = [each valueForKey:@"date"];
+        id date = [each valueForKey:@"startDate"];
         NSTimeInterval worktimeInOneWeek = 0;
 		if (lastMonth != [month(date) intValue]) {
 			worktimeInOneMonth = 0;
 			lastMonth = [month(date) intValue];
 		}
-        while (isSameWeek(date, [each valueForKey:@"date"])) {
-            worktimeInOneWeek += [[each valueForKey:@"endTime"] timeIntervalSinceDate: [each valueForKey:@"startTime"]];
+        while (each && isSameWeek(date, [each valueForKey:@"startDate"])) {
+            worktimeInOneWeek += [[each valueForKey:@"endDate"] timeIntervalSinceDate: [each valueForKey:@"startDate"]];
             each = [enumerator nextObject];
         }
 		worktimeInOneMonth += worktimeInOneWeek;
-        [results addObject: [NSDictionary dictionaryWithObjectsAndKeys:
-							 year(date), @"year",
-							 week(date), @"week",
-							 [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktimeInOneWeek], @"worktime", 
-							 [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktimeInOneMonth], @"worktimeMonth", 
-							 nil]];
+        [results addObject: @{
+            @"year" : year(date),
+            @"week" : week(date),
+            @"worktime" : [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktimeInOneWeek],
+            @"worktimeMonth" : [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktimeInOneMonth],
+        }];
     }
 	id reversedResults = [NSMutableArray array];
 	enumerator = [results reverseObjectEnumerator];
