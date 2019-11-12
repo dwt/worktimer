@@ -9,5 +9,7 @@
 }
 
 - (NSString *)hoursAndMinutesFromDuration;
+- (NSDate *)startTime;
+- (void)setStartTime:(NSDate *)newDate;
 
 @end

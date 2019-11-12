@@ -34,10 +34,6 @@ this could emulate sntl@sick, sntl@holiday to add special time entries that cove
 	[self setPrimitiveValue: [NSDate date] forKey: @"startDate"];
 }
 
-+ (NSSet *) keyPathsForValuesAffectingdurationAsHoursAndMinutes {
-	return [NSSet setWithObjects:@"startDate", @"endDate", nil];
-}
-
 - (NSTimeInterval) duration {
     NSDate *startDate = [self valueForKey:@"startDate"];
     NSDate *endDate = [self valueForKey:@"endDate"];
@@ -57,7 +53,6 @@ this could emulate sntl@sick, sntl@holiday to add special time entries that cove
     [self willChangeValueForKey:@"startDate"];
     [self setPrimitiveValue:newDate forKey:@"startDate"];
     [self didChangeValueForKey:@"startDate"];
-    [(Worktimer_AppDelegate *)[NSApp delegate] refreshSorting];
 }
 
 - (void)setEndDate:(NSDate *)newDate {
@@ -67,6 +62,33 @@ this could emulate sntl@sick, sntl@holiday to add special time entries that cove
     [self willChangeValueForKey:@"endDate"];
     [self setPrimitiveValue:newDate forKey:@"endDate"];
     [self didChangeValueForKey:@"endDate"];
+}
+
+- (NSDate *)startTime {
+    return [self primitiveValueForKey:@"startDate"];
+}
+
+- (void)setStartTime:(NSDate *)newDate {
+    // This works around a strange behaviouur of NSDateFormatter
+    // that seems to always reset the date part of a date to a known value
+    // when editing only the time part of a date
+    NSDate *startDate = [self primitiveValueForKey:@"startDate"];
+    newDate = [self forceDate:newDate toSameDayAsDate:startDate];
+    [self setStartDate:newDate];
+}
+
+#pragma mark Plumbing
+
++ (NSSet *) keyPathsForValuesAffectingDuration {
+    return [NSSet setWithObjects:@"startDate", @"endDate", nil];
+}
+
++ (NSSet *) keyPathsForValuesAffectingHoursAndMinutesFromDuration {
+    return [NSSet setWithObjects:@"duration", nil];
+}
+
++ (NSSet *) keyPathsForValuesAffectingStartTime {
+    return [NSSet setWithObjects:@"startDate", nil];
 }
 
 - (NSDate *)forceDate:(NSDate *)aDate toSameDayAsDate:(NSDate *)referenceDate {

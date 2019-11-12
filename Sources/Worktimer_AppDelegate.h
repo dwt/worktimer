@@ -10,9 +10,10 @@
     IBOutlet NSArrayController *worktimeController;
     IBOutlet NSTextField *startTimeField, *endTimeField;
     IBOutlet NSArrayController *worktimesController, *summaryController;
-    IBOutlet NSPanel *summaryWindow;
-	IBOutlet NSTextField *timeWorking;
+    IBOutlet NSTextField *timeWorking;
     
+    IBOutlet NSPanel *summaryWindow;
+	
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;

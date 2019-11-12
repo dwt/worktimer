@@ -44,7 +44,7 @@
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
                                             <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="378">
-                                                <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%A, %e. %B" id="252"/>
+                                                <dateFormatter key="formatter" formatterBehavior="custom10_4" dateStyle="long" dateFormat="dd. MMMM y" id="252"/>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -61,14 +61,14 @@
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
                                             <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="375">
-                                                <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%H:%M" id="253"/>
+                                                <dateFormatter key="formatter" timeStyle="short" id="253"/>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="238" name="value" keyPath="arrangedObjects.startDate" id="Kro-FT-d3H"/>
+                                                <binding destination="238" name="value" keyPath="arrangedObjects.startTime" id="FXe-QD-F24"/>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn width="117.7119140625" minWidth="27.7119140625" maxWidth="1000" id="230">
@@ -78,7 +78,7 @@
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
                                             <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="376">
-                                                <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%H:%M" id="254"/>
+                                                <dateFormatter key="formatter" timeStyle="short" id="254"/>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -162,20 +162,20 @@
                         <rect key="frame" x="175" y="526" width="112" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="372">
-                            <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%H:%M" id="270"/>
+                            <dateFormatter key="formatter" timeStyle="short" id="270"/>
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="238" name="value" keyPath="selection.startDate" id="0sO-aP-S65"/>
+                            <binding destination="238" name="value" keyPath="selection.startTime" id="Do9-oq-0wh"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="264">
                         <rect key="frame" x="295" y="526" width="113" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="373">
-                            <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%H:%M" id="271"/>
+                            <dateFormatter key="formatter" timeStyle="short" id="271"/>
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -201,7 +201,7 @@
             <connections>
                 <outlet property="delegate" destination="205" id="207"/>
             </connections>
-            <point key="canvasLocation" x="40" y="41"/>
+            <point key="canvasLocation" x="-72" y="-133"/>
         </window>
         <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
@@ -257,7 +257,11 @@
                 <menuItem title="File" id="83">
                     <menu key="submenu" title="File" id="81">
                         <items>
-                            <menuItem title="New" keyEquivalent="n" id="82"/>
+                            <menuItem title="New" keyEquivalent="n" id="82">
+                                <connections>
+                                    <action selector="addWorktimeAndSetFocus:" target="205" id="ZX7-nL-htJ"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Open..." keyEquivalent="o" id="72"/>
                             <menuItem title="Open Recent" id="124">
                                 <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="125">
@@ -457,7 +461,7 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="6" y="-261"/>
+            <point key="canvasLocation" x="-166" y="-476"/>
         </menu>
         <customObject id="205" userLabel="Worktimer_AppDelegate" customClass="Worktimer_AppDelegate">
             <connections>
@@ -592,7 +596,7 @@
                     </scrollView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="330" y="353"/>
+            <point key="canvasLocation" x="406" y="-288"/>
         </window>
         <arrayController objectClassName="NSDictionary" editable="NO" id="300" userLabel="WeeklySummary">
             <declaredKeys>
