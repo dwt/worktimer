@@ -56,6 +56,14 @@
     );
 }
 
+- (void) testCanSetNilEndDateAfterDateWasSet {
+    id worktime = [self createWorktime];
+    id endDate = [timeComputation timeFromDate: [NSDate dateWithTimeIntervalSinceNow:60*60*24*3]];
+    [worktime setValue:endDate forKey:@"endDate"];
+    [worktime setValue:nil forKey:@"endDate"];
+    XCTAssertNil([worktime valueForKey:@"endDate"]);
+}
+
 - (void) donttestContinuallyUpdateWorktimeAsLongAsEndDateIsNotSet {
     // too slow, would need to wait one minute or find a way to fake the system time
 	id worktime = [self createWorktime];

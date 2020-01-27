@@ -56,8 +56,10 @@ this could emulate sntl@sick, sntl@holiday to add special time entries that cove
 }
 
 - (void)setEndDate:(NSDate *)newDate {
-    NSDate *startDate = [self primitiveValueForKey:@"startDate"];
-    newDate = [self forceDate:newDate toSameDayAsDate:startDate];
+    if (newDate) {
+        NSDate *startDate = [self primitiveValueForKey:@"startDate"];
+        newDate = [self forceDate:newDate toSameDayAsDate:startDate];
+    }
     
     [self willChangeValueForKey:@"endDate"];
     [self setPrimitiveValue:newDate forKey:@"endDate"];
