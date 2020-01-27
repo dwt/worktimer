@@ -13,20 +13,17 @@
 	[self setupContinousWorktimeDisplay];
 }
 
-- (void) refreshSorting;
-{
+- (void) refreshSorting; {
     id sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO];
     id sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
 	[worktimeController setSortDescriptors:sortDescriptors];
 }
 
-- (void) setupContinousWorktimeDisplay;
-{
+- (void) setupContinousWorktimeDisplay; {
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeDisplayed:) userInfo:nil repeats:YES];
 }
 
-- (void) updateTimeDisplayed: (NSTimer *)unused;
-{
+- (void) updateTimeDisplayed: (NSTimer *)unused; {
 	// Also note the binding that also updates this value, so there is no delay when a different value is selected
 	id selection = [worktimeController selectedObjects];
 	if (1 != [selection count])
@@ -36,8 +33,7 @@
 	[timeWorking setStringValue:[worktime hoursAndMinutesFromDuration]];
 }
 
-BOOL isViewSuperviewOf( id view, id viewToTest)
-{
+BOOL isViewSuperviewOf( id view, id viewToTest) {
     id currentView = viewToTest;
 	do {
         if (currentView == view) return YES;
@@ -45,8 +41,7 @@ BOOL isViewSuperviewOf( id view, id viewToTest)
     return NO;
 }
 
-- (IBAction)pasteTime:sender;
-{
+- (IBAction)pasteTime:sender; {
     if (1 != [[worktimesController selectedObjects] count]) return;
     
     id worktime = [[worktimesController selectedObjects] objectAtIndex: 0];
@@ -68,9 +63,6 @@ BOOL isViewSuperviewOf( id view, id viewToTest)
 }
 
 BOOL isSameWeek(id firstDate, id secondDate) {
-    if ( ! firstDate || ! secondDate)
-        NSLog(@"problem");
-    
     // REFACT extract yearAndWeekFromDate
     id calendar = [NSCalendar currentCalendar];
     NSInteger yearAndWeek = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
@@ -81,6 +73,7 @@ BOOL isSameWeek(id firstDate, id secondDate) {
         && [firstComponents weekOfMonth] == [secondComponents weekOfMonth];
 }
 
+// REFACT consider to put this on Worktime?
 void printReport(id self, id date, NSTimeInterval worktime) {
     id calendar = [NSCalendar currentCalendar];
     NSInteger yearAndWeek = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
@@ -158,7 +151,6 @@ id week(id date) {
  the content, either in the NSApplicationSupportDirectory location or (if the
  former cannot be found), the system's temporary directory.
  */
-
 - (NSString *)applicationSupportFolder {
 	
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
@@ -191,7 +183,6 @@ id week(id date) {
  by merging all of the models found in the application bundle and all of the 
  framework bundles.
  */
-
 - (NSManagedObjectModel *)managedObjectModel {
 	
     if (managedObjectModel != nil) {
@@ -215,7 +206,6 @@ id week(id date) {
  store for the application to it.  (The folder for the store is created, 
  if necessary.)
  */
-
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
     if (persistentStoreCoordinator != nil) {
         return persistentStoreCoordinator;
@@ -251,7 +241,6 @@ id week(id date) {
  Returns the managed object context for the application (which is already
  bound to the persistent store coordinator for the application.) 
  */
-
 - (NSManagedObjectContext *) managedObjectContext
 {
     if (managedObjectContext)
@@ -323,7 +312,6 @@ id week(id date) {
 	
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.alertStyle = NSAlertStyleCritical;
-    alert.messageText = NSLocalizedString(@"Unable to save", nil);
     alert.informativeText = NSLocalizedString(@"Unabel to save changes while quitting. Continue to run?", nil);
     [alert addButtonWithTitle:NSLocalizedString(@"Continue to run", nil)];
     [alert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
