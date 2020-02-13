@@ -17,6 +17,7 @@
 		8D1879571429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1879561429B84B0056ED31 /* Worktimer_DataModel.xcdatamodeld */; };
 		8D598946235648780049CB88 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C4F30CE78EAE002887A6 /* Tests.m */; };
 		8D5989472356487C0049CB88 /* TimeComputationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779F1188930500C537AA /* TimeComputationTest.m */; };
+		8D9683452451959B00E2DB64 /* TimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9683442451959B00E2DB64 /* TimeIntervalFormatter.m */; };
 		8DA4D0A9237B407F00A7F517 /* ReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4D0A8237B407F00A7F517 /* ReportTest.m */; };
 		8DAD779D118892E400C537AA /* TimeComputation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779C118892E400C537AA /* TimeComputation.m */; };
 		8DDC4EE8099FA2C500D03CCB /* Worktime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC4EE7099FA2C500D03CCB /* Worktime.m */; };
@@ -56,6 +57,8 @@
 		8D5989402356483B0049CB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8999172354676700E67B31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D8999192354677100E67B31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		8D9683432451959B00E2DB64 /* TimeIntervalFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeIntervalFormatter.h; sourceTree = "<group>"; };
+		8D9683442451959B00E2DB64 /* TimeIntervalFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalFormatter.m; sourceTree = "<group>"; };
 		8DA4D0A8237B407F00A7F517 /* ReportTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportTest.m; sourceTree = "<group>"; };
 		8DAD779B118892E400C537AA /* TimeComputation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeComputation.h; sourceTree = "<group>"; };
 		8DAD779C118892E400C537AA /* TimeComputation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeComputation.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 			children = (
 				77C8280B06725ACE000B614F /* Worktimer_AppDelegate.h */,
 				77C8280C06725ACE000B614F /* Worktimer_AppDelegate.m */,
+				8D9683432451959B00E2DB64 /* TimeIntervalFormatter.h */,
+				8D9683442451959B00E2DB64 /* TimeIntervalFormatter.m */,
 			);
 			name = Classes;
 			path = Sources;
@@ -302,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D9683452451959B00E2DB64 /* TimeIntervalFormatter.m in Sources */,
 				8D0E544F2374BAB1002A3B72 /* 001-WorktimeParameterReduction.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				8D0E54512374C467002A3B72 /* 001-WorktimeParameterReduction.xcmappingmodel in Sources */,
