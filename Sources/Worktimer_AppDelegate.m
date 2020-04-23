@@ -20,6 +20,7 @@
 }
 
 - (void) setupContinousWorktimeDisplay; {
+    // REFACT replace with continous updates on the worktime if it has no end-date
 	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeDisplayed:) userInfo:nil repeats:YES];
 }
 
@@ -27,7 +28,7 @@
 	// Also note the binding that also updates this value, so there is no delay when a different value is selected
 	id selection = [worktimeController selectedObjects];
 	if (1 != [selection count])
-		return;
+		return; // this could do the sum too, but really the bindings should keep this updated maybe? So the duration should probably update every second while there is no end time set?
 	
 	id worktime = [selection objectAtIndex:0];
 	[timeWorking setStringValue:[worktime hoursAndMinutesFromDuration]];
