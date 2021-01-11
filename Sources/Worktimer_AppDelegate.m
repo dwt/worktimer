@@ -66,12 +66,12 @@ BOOL isViewSuperviewOf( id view, id viewToTest) {
 BOOL isSameWeek(id firstDate, id secondDate) {
     // REFACT extract yearAndWeekFromDate
     id calendar = [NSCalendar currentCalendar];
-    NSInteger yearAndWeek = NSCalendarUnitYear | NSCalendarUnitWeekOfMonth;
+    NSInteger yearAndWeek = NSCalendarUnitYear | NSCalendarUnitWeekOfYear;
 	
     id firstComponents = [calendar components:yearAndWeek fromDate:firstDate];
     id secondComponents = [calendar components:yearAndWeek fromDate:secondDate];
     return [firstComponents year] == [secondComponents year]
-        && [firstComponents weekOfMonth] == [secondComponents weekOfMonth];
+        && [firstComponents weekOfYear] == [secondComponents weekOfYear];
 }
 
 // REFACT consider to put this on Worktime?
@@ -140,7 +140,12 @@ id week(id date) {
     NSMutableString *csv = [NSMutableString stringWithFormat:@"Year\tWeekOfYear\tHours\n"];
     id each, enumerator = [[summaryController selectedObjects] objectEnumerator];
     while (each = [enumerator nextObject]) {
-        [csv appendFormat:@"%@\t%@\t%@\n", [each objectForKey:@"year"], [each objectForKey:@"week"], [each objectForKey:@"worktime"]];
+        [csv appendFormat:@"%@\t%@\t%@\n",
+            [each objectForKey:@"year"],
+            [each objectForKey:@"week"],
+            // numbers formats times without seconds bad
+            [NSString stringWithFormat:@"%@:0", [each objectForKey:@"worktime"]]
+        ];
     }
     
     // put csv of selected rows on clipboard
