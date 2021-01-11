@@ -1,7 +1,5 @@
 == TODO ==
-* show sum of hours when multi select
 * Migrate to new data model:
-  * Start DateTime / End DateTime
   * what / context, @tags
 * Auswertung über die tags (work@sntl, work@inside) tag, woche, monat
 * Tracken wie lange ich arbeiten will -> über / unterstanden

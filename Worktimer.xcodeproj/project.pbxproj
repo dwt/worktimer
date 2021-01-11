@@ -21,8 +21,6 @@
 		8DA4D0A9237B407F00A7F517 /* ReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4D0A8237B407F00A7F517 /* ReportTest.m */; };
 		8DAD779D118892E400C537AA /* TimeComputation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779C118892E400C537AA /* TimeComputation.m */; };
 		8DDC4EE8099FA2C500D03CCB /* Worktime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC4EE7099FA2C500D03CCB /* Worktime.m */; };
-		8DDC4FE7099FD5A600D03CCB /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC4FE5099FD5A600D03CCB /* minus.png */; };
-		8DDC4FE8099FD5A600D03CCB /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC4FE6099FD5A600D03CCB /* plus.png */; };
 		8DFFD50B09A092E700FD6D4B /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DFFD50A09A092E700FD6D4B /* TODO.txt */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +63,6 @@
 		8DAD779F1188930500C537AA /* TimeComputationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeComputationTest.m; sourceTree = "<group>"; };
 		8DDC4EE6099FA2C500D03CCB /* Worktime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktime.h; sourceTree = "<group>"; };
 		8DDC4EE7099FA2C500D03CCB /* Worktime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worktime.m; sourceTree = "<group>"; };
-		8DDC4FE5099FD5A600D03CCB /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
-		8DDC4FE6099FD5A600D03CCB /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		8DFFD50A09A092E700FD6D4B /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,8 +155,6 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
-				8DDC4FE5099FD5A600D03CCB /* minus.png */,
-				8DDC4FE6099FD5A600D03CCB /* plus.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,8 +281,6 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				8DDC4FE7099FD5A600D03CCB /* minus.png in Resources */,
-				8DDC4FE8099FD5A600D03CCB /* plus.png in Resources */,
 				8DFFD50B09A092E700FD6D4B /* TODO.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

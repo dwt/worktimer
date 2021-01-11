@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1050" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,11 +27,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="wlf-Hg-N5l">
-                            <rect key="frame" x="1" y="0.0" width="498" height="517"/>
+                            <rect key="frame" x="1" y="1" width="498" height="516"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" autosaveColumns="NO" headerView="383" id="228">
-                                    <rect key="frame" x="0.0" y="0.0" width="498" height="492"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="498" height="491"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,7 +85,7 @@
                                                 <binding destination="238" name="value" keyPath="arrangedObjects.endDate" id="77N-vP-0UB"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn width="107.51904296875" minWidth="50.51904296875" maxWidth="1000" id="237">
+                                        <tableColumn width="98.51904296875" minWidth="50.51904296875" maxWidth="1000" id="237">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Duration">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -112,7 +112,7 @@
                             <rect key="frame" x="484" y="17" width="15" height="485"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="383">
+                        <tableHeaderView key="headerView" wantsLayer="YES" id="383">
                             <rect key="frame" x="0.0" y="0.0" width="498" height="25"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
@@ -120,9 +120,9 @@
                     <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="240">
                         <rect key="frame" x="8" y="526" width="24" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="smallSquare" title="+" bezelStyle="smallSquare" image="plus" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="369">
+                        <buttonCell key="cell" type="smallSquare" title="+" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="369">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="14"/>
+                            <font key="font" usesAppearanceFont="YES"/>
                         </buttonCell>
                         <connections>
                             <action selector="addWorktimeAndSetFocus:" target="205" id="287"/>
@@ -150,7 +150,7 @@
                     <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="257">
                         <rect key="frame" x="40" y="526" width="24" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="smallSquare" title="-" bezelStyle="smallSquare" image="minus" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="371">
+                        <buttonCell key="cell" type="smallSquare" title="-" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="371">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="systemBold" size="14"/>
                         </buttonCell>
@@ -218,7 +218,7 @@
             <connections>
                 <outlet property="delegate" destination="205" id="207"/>
             </connections>
-            <point key="canvasLocation" x="355" y="-223"/>
+            <point key="canvasLocation" x="461" y="-328"/>
         </window>
         <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
@@ -520,11 +520,11 @@
                         <rect key="frame" x="1" y="1" width="360" height="262"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="xgU-sx-eru">
-                            <rect key="frame" x="1" y="0.0" width="358" height="261"/>
+                            <rect key="frame" x="1" y="1" width="358" height="260"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="386" id="295">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="236"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="235"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -576,7 +576,7 @@
                                                 <binding destination="300" name="value" keyPath="arrangedObjects.worktime" id="312"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn width="136" minWidth="10" maxWidth="3.4028234663852886e+38" id="363">
+                                        <tableColumn width="127" minWidth="10" maxWidth="3.4028234663852886e+38" id="363">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Monthly total">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -603,7 +603,7 @@
                             <rect key="frame" x="344" y="17" width="15" height="229"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="386">
+                        <tableHeaderView key="headerView" wantsLayer="YES" id="386">
                             <rect key="frame" x="0.0" y="0.0" width="358" height="25"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
@@ -623,7 +623,7 @@
         </arrayController>
     </objects>
     <resources>
-        <image name="minus" width="10" height="10"/>
-        <image name="plus" width="10" height="10"/>
+        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="NSRemoveTemplate" width="14" height="4"/>
     </resources>
 </document>
