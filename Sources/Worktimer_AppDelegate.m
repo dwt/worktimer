@@ -89,7 +89,7 @@ void printReport(id self, id date, NSTimeInterval worktime) {
 // REFACT rename yearMonthAndWeekFromDate
 NSDateComponents *dateComponentsFromDate(NSDate *date) {
 	id calendar = [NSCalendar currentCalendar];
-    NSInteger yearMonthAndWeek = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth;
+    NSInteger yearMonthAndWeek = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekOfYear;
     return [calendar components:yearMonthAndWeek fromDate:date];
 }	
 
@@ -102,7 +102,7 @@ id month(id date) {
 }
 
 id week(id date) {
-    return @( [dateComponentsFromDate(date) weekOfMonth] );
+    return @( [dateComponentsFromDate(date) weekOfYear] );
 }
 
 // REFACT get this tested and extract it from the app delegate
@@ -110,25 +110,18 @@ id week(id date) {
     id results = [NSMutableArray array];
     id each, enumerator = [[worktimeController arrangedObjects] reverseObjectEnumerator];
     each = [enumerator nextObject];
-	int lastMonth = 0;
-	NSTimeInterval worktimeInOneMonth = 0;
-    while (nil != each) {
+	while (nil != each) {
         id date = [each valueForKey:@"startDate"];
         NSTimeInterval worktimeInOneWeek = 0;
-		if (lastMonth != [month(date) intValue]) {
-			worktimeInOneMonth = 0;
-			lastMonth = [month(date) intValue];
-		}
+
         while (each && isSameWeek(date, [each valueForKey:@"startDate"])) {
             worktimeInOneWeek += [[each valueForKey:@"endDate"] timeIntervalSinceDate: [each valueForKey:@"startDate"]];
             each = [enumerator nextObject];
         }
-		worktimeInOneMonth += worktimeInOneWeek;
         [results addObject: @{
             @"year" : year(date),
             @"week" : week(date),
             @"worktime" : [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktimeInOneWeek],
-            @"worktimeMonth" : [[TimeComputation sharedInstance] hoursAndMinutesFromInterval:worktimeInOneMonth],
         }];
     }
 	id reversedResults = [NSMutableArray array];

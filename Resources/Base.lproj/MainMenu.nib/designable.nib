@@ -509,22 +509,22 @@
         <window title="Weekly Summary" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="292" userLabel="Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="42" y="603" width="360" height="262"/>
+            <rect key="contentRect" x="42" y="603" width="254" height="393"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <value key="minSize" type="size" width="213" height="113"/>
             <view key="contentView" id="293">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="262"/>
+                <rect key="frame" x="0.0" y="0.0" width="254" height="393"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="294">
-                        <rect key="frame" x="1" y="1" width="360" height="262"/>
+                        <rect key="frame" x="1" y="1" width="254" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="xgU-sx-eru">
-                            <rect key="frame" x="1" y="1" width="358" height="260"/>
+                            <rect key="frame" x="1" y="1" width="252" height="391"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="386" id="295">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="235"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="366"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -561,7 +561,7 @@
                                                 <binding destination="300" name="value" keyPath="arrangedObjects.week" id="304"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn width="88.7890625" minWidth="54.7890625" maxWidth="1000" id="298">
+                                        <tableColumn width="112.7890625" minWidth="54.7890625" maxWidth="1000" id="298">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Weekly total">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -574,21 +574,6 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
                                                 <binding destination="300" name="value" keyPath="arrangedObjects.worktime" id="312"/>
-                                            </connections>
-                                        </tableColumn>
-                                        <tableColumn width="127" minWidth="10" maxWidth="3.4028234663852886e+38" id="363">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Monthly total">
-                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                            </tableHeaderCell>
-                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="364">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                            <connections>
-                                                <binding destination="300" name="value" keyPath="arrangedObjects.worktimeMonth" id="366"/>
                                             </connections>
                                         </tableColumn>
                                     </tableColumns>
@@ -604,21 +589,19 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" wantsLayer="YES" id="386">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="252" height="25"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-142" y="-44"/>
+            <point key="canvasLocation" x="-93" y="-299.5"/>
         </window>
         <arrayController objectClassName="NSDictionary" editable="NO" id="300" userLabel="WeeklySummary">
             <declaredKeys>
-                <string>year</string>
                 <string>week</string>
                 <string>worktime</string>
                 <string>@count</string>
-                <string>worktimeMonth</string>
             </declaredKeys>
         </arrayController>
     </objects>

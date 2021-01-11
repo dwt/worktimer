@@ -1,10 +1,10 @@
 == TODO ==
-* Migrate to new data model:
-  * what / context, @tags
-* Auswertung über die tags (work@sntl, work@inside) tag, woche, monat
+* copy aus der auswertung erlauben, damit ich die weitere auswertung in numbers/excel/jupyter machen kann
 * Tracken wie lange ich arbeiten will -> über / unterstanden
 * Eingeben können wenn Feiertag / Krank / Urlaub ist (um Überstunden zu tracken)
-  
+* Migrate to new data model: what / context, @tags
+* Auswertung über die tags (work@sntl, work@inside) tag, woche, monat
+
 
 == Goals ==
 * Worktimer assumes that you are working on one thing only at the same time
