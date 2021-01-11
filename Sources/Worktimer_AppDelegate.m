@@ -131,6 +131,26 @@ id week(id date) {
     return reversedResults;
 }
 
+/*
+ This should be only for the report window, so the report window really needs it's own controller.
+ This way the copy menu item is enabled, even when the report window is not even in focus, which is wrong.
+*/
+- (IBAction)copy:(id)sender {
+    // get selected rows
+    NSMutableString *csv = [NSMutableString stringWithFormat:@"Year\tWeekOfYear\tHours\n"];
+    id each, enumerator = [[summaryController selectedObjects] objectEnumerator];
+    while (each = [enumerator nextObject]) {
+        [csv appendFormat:@"%@\t%@\t%@\n", [each objectForKey:@"year"], [each objectForKey:@"week"], [each objectForKey:@"worktime"]];
+    }
+    
+    // put csv of selected rows on clipboard
+    NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+    [pasteBoard clearContents];
+    [pasteBoard declareTypes: @[NSPasteboardTypeTabularText, NSPasteboardTypeString] owner:nil];
+    [pasteBoard setString:csv forType:NSPasteboardTypeTabularText];
+    [pasteBoard setString:csv forType:NSPasteboardTypeString];
+}
+
 - (IBAction) showWeeklyReport:sender; {
     [summaryController setContent:[self weeklyReport]];
     [summaryWindow makeKeyAndOrderFront:nil];
