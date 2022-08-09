@@ -21,7 +21,6 @@
 		8DA4D0A9237B407F00A7F517 /* ReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4D0A8237B407F00A7F517 /* ReportTest.m */; };
 		8DAD779D118892E400C537AA /* TimeComputation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779C118892E400C537AA /* TimeComputation.m */; };
 		8DDC4EE8099FA2C500D03CCB /* Worktime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC4EE7099FA2C500D03CCB /* Worktime.m */; };
-		8DFFD50B09A092E700FD6D4B /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DFFD50A09A092E700FD6D4B /* TODO.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +64,7 @@
 		8DAD779F1188930500C537AA /* TimeComputationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeComputationTest.m; sourceTree = "<group>"; };
 		8DDC4EE6099FA2C500D03CCB /* Worktime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktime.h; sourceTree = "<group>"; };
 		8DDC4EE7099FA2C500D03CCB /* Worktime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worktime.m; sourceTree = "<group>"; };
-		8DFFD50A09A092E700FD6D4B /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		8DFFD50A09A092E700FD6D4B /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +284,6 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				8DFFD50B09A092E700FD6D4B /* TODO.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
