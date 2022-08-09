@@ -21,7 +21,7 @@
 		8DA4D0A9237B407F00A7F517 /* ReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4D0A8237B407F00A7F517 /* ReportTest.m */; };
 		8DAD779D118892E400C537AA /* TimeComputation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD779C118892E400C537AA /* TimeComputation.m */; };
 		8DDC4EE8099FA2C500D03CCB /* Worktime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC4EE7099FA2C500D03CCB /* Worktime.m */; };
-		8DFFD50B09A092E700FD6D4B /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DFFD50A09A092E700FD6D4B /* TODO.txt */; };
+		8DFFD50B09A092E700FD6D4B /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DFFD50A09A092E700FD6D4B /* TODO.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 		8DAD779F1188930500C537AA /* TimeComputationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeComputationTest.m; sourceTree = "<group>"; };
 		8DDC4EE6099FA2C500D03CCB /* Worktime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worktime.h; sourceTree = "<group>"; };
 		8DDC4EE7099FA2C500D03CCB /* Worktime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Worktime.m; sourceTree = "<group>"; };
-		8DFFD50A09A092E700FD6D4B /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		8DFFD50A09A092E700FD6D4B /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 			children = (
 				8D2FA68928A2981B005E944C /* License.txt */,
 				8D2FA68828A295DF005E944C /* README.md */,
-				8DFFD50A09A092E700FD6D4B /* TODO.txt */,
+				8DFFD50A09A092E700FD6D4B /* TODO.md */,
 				7756732906782D8800D1FEB8 /* Model */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -285,7 +285,7 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				8DFFD50B09A092E700FD6D4B /* TODO.txt in Resources */,
+				8DFFD50B09A092E700FD6D4B /* TODO.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
