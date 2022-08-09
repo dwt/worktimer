@@ -11,3 +11,7 @@ This is a simple time tracker. That means it tracks the time you spend on a proj
 - You can see a live preview of the current intervall length as a preview for easy reference
 
 Thats it. This really is a simple time tracker, that does just enough for my own needs.
+
+## License
+
+This software is licensed under the MIT license. For details see [the license.txt](license.txt).

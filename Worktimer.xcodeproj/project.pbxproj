@@ -51,6 +51,7 @@
 		8D1107320486CEB800E47090 /* Worktimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worktimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1879581429B84B0056ED31 /* 02-reduce_to_start_end.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "02-reduce_to_start_end.xcdatamodel"; sourceTree = "<group>"; };
 		8D2FA68828A295DF005E944C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8D2FA68928A2981B005E944C /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		8D56C4F30CE78EAE002887A6 /* Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		8D59893C2356483B0049CB88 /* WorktimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorktimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5989402356483B0049CB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		29B97314FDCFA39411CA2CEA /* Worktimer */ = {
 			isa = PBXGroup;
 			children = (
+				8D2FA68928A2981B005E944C /* License.txt */,
 				8D2FA68828A295DF005E944C /* README.md */,
 				8DFFD50A09A092E700FD6D4B /* TODO.txt */,
 				7756732906782D8800D1FEB8 /* Model */,
