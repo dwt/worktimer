@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-BOOL isRunningUnitTests() {
+BOOL isRunningUnitTests(void) {
     return nil != NSClassFromString(@"XCTestCase");
 }
 
-int runApplicationWithoutLoadingGUI() {
+int runApplicationWithoutLoadingGUI(void) {
     [NSApplication sharedApplication];
     [NSApp run];
     return 0;
