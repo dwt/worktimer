@@ -3,13 +3,13 @@
 #import "Worktime.h"
 #import "TimeComputation.h"
 
-@interface Tests : XCTestCase {
+@interface WorktimeTests : XCTestCase {
     id model, coordinator, context;
     id timeComputation;
 }
 @end
 
-@implementation Tests
+@implementation WorktimeTests
 
 - (void) setUp {
 	model = [NSManagedObjectModel mergedModelFromBundles:nil]; // Autoreleased!
