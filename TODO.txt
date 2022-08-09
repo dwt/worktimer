@@ -3,7 +3,10 @@
 * Tracken wie lange ich arbeiten will -> über / unterstanden
 * Eingeben können wenn Feiertag / Krank / Urlaub ist (um Überstunden zu tracken)
 * Migrate to new data model: what / context, @tags
-* Auswertung über die tags (work@sntl, work@inside) tag, woche, monat
+* Auswertung über die tags (`work@sntl`, `work@inside`) tag, woche, monat
+* Document how to add and test CoreData migrations
+    * [Core Data Migration](https://web.archive.org/web/20100821040018/http://sunflower.coleharbour.ca/cocoamondo/2009/06/core-data-migration/)
+    * [Core Data Migration Problems?](https://web.archive.org/web/20151028171009/http://iphonedevelopment.blogspot.com/2009/09/core-data-migration-problems.html)
 
 
 == Goals ==
