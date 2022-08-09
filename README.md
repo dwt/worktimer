@@ -14,4 +14,4 @@ Thats it. This really is a simple time tracker, that does just enough for my own
 
 ## License
 
-This software is licensed under the MIT license. For details see [the license.txt](license.txt).
+This software is licensed under the MIT license. For details see [the license.txt](License.txt).
