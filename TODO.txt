@@ -18,12 +18,9 @@
 ** Try to use accessibility api for this
 ** Want to be able to run unit and acceptance tests separately
 ** Consider to use macruby to write acceptance tests (with rspec or cucumber?)
-* Do not store neutered datetimes, but start-dates and time intervals
-** Migrations probably need to happen with myself in charge <http://sunflower.coleharbour.ca/cocoamondo/2009/06/core-data-migration/>
-** Also note: <http://iphonedevelopment.blogspot.com/2009/09/core-data-migration-problems.html>
 
 == Code TODOs LATER ==
-* Refactor data model to have start-date, duration and metadata (just a string or separate fields?) Design criteria:
+* Refactor data model to have metadata (just a string or separate fields?) Design criteria:
 ** Should be able to track stuff I do for work
 ** Should be able to track stuff I do for work, support, scrum master
 ** Should be able to track specific stuff I'm doing
